@@ -1,0 +1,108 @@
+body,
+h1,
+p {
+    margin: 0;
+}
+
+header {
+    margin-bottom: 20px;
+    background-color: rgb(244, 79, 79);
+    text-align: center;
+}
+
+header h1 {
+    color: rgb(255, 255, 255);
+}
+
+/* main要素の余白設定 */
+main {
+    padding: 10px;
+}
+
+/* #parent 要素のFlexコンテナ設定 */
+#parent {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .contents のスタイル */
+.contents {
+    border: 3px solid rgb(238, 204, 204);
+    flex-basis: 25%;
+    padding: 10px 15px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* h2 要素のスタイル */
+.contents h2 {
+    font-size: 25px;
+    border-bottom: 3px dotted rgb(236, 122, 122);
+    position: relative;
+    padding-left: 20px;
+}
+
+/* h2の前に●を表示 */
+.contents h2::before {
+    content: "●";
+    color: rgb(239, 111, 139);
+    position: absolute;
+    left: 0;
+}
+
+/* 二番目のp要素の先頭文字のスタイル */
+.contents p:nth-of-type(2)::first-letter {
+    font-weight: bold;
+    color: rgb(97, 206, 249);
+}
+
+.contents img {
+    margin: 10px 0;
+    width: 70%;
+}
+
+/* footer 要素のスタイル */
+footer {
+    background-color: rgb(244, 79, 79);
+    text-align: center;
+    padding: 10px 0; /* 適度な余白を追加 */
+}
+
+/* footer 内の a 要素のスタイル */
+footer a {
+    color: rgb(255, 255, 255);
+    text-decoration: none; /* 任意：下線を消したい場合 */
+}
+
+/* 訪問済みリンク */
+footer a:visited {
+    color: rgb(193, 234, 251);
+}
+
+/* ホバー時のリンク色 */
+footer a:hover {
+    color: rgb(245, 178, 168);
+}
+
+@media screen and (max-width: 768px) {
+    /* h2 のフォントサイズを30pxに */
+    h2 {
+        font-size: 30px;
+    }
+
+    /* p のフォントサイズを25pxに */
+    p {
+        font-size: 25px;
+    }
+
+    /* Flexbox を縦並びに */
+    #parent {
+        flex-direction: column;
+        align-items: center; /* 要素を中央揃えにする場合（任意） */
+    }
+
+    /* 各 contents を画面幅に合わせる（任意） */
+    .contents {
+        flex-basis: 90%;
+    }
+}
